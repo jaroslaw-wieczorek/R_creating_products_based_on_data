@@ -1,0 +1,11 @@
+---
+title: "zestaw_IV"
+author: "Jarosław Wieczorek"
+date: "12 11 2020"
+output: html_document
+---
+
+
+rmarkdown::render("zadania_zestaw_IV_rodział.Rmd")
+
+

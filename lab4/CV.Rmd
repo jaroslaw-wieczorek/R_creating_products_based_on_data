@@ -1,0 +1,51 @@
+---
+title: "Jarosław Wieczorek"
+output:
+  pdf_document: default
+  html_document: default
+---
+## *Doświadczenie zawodowe:*
+#### **01.2019 – obecnie:** Django backend developer.
+*   *Miejsce*: PCSS - Poznańskie Centrum Superkomputerowo-Sieciowe.
+
+*   *Dział*: Przetwarzania danych 
+
+
+##### Obowiązki:
+
+*   _*Tworzenie API. Testy jednostkowe i integracyjne.*_
+
+*   _*Utrzymanie bezpieczeństwa backendu.*_
+
+#### **10.2017 – 01.2019:** Programista i analityk bezpieczeństwa.
+*   *Miejsce*: PCSS - Poznańskie Centrum Superkomputerowo-Sieciowe.
+
+*   *Dział*: Bezpieczeństwa
+
+##### Obowiązki: 
+
+*   _*Analiza protokołów przemysłowych po przez inżynierie odwrotna.*_
+
+*   _*Tworzenie parserów do protokołów przemysłowych:*_
+    *   DNP3 RTU
+    *   DNP3 TCP/IP 
+    *   Modbus RTU
+    *   Modbus TCP/IP
+
+## *Wyksztacenie:*
+#### **02.2020 – obecnie:** Uniwersytet im. Adama Mickiewicza w Poznaniu
+
+*   **Wydział:** Matematyki i Informatyki
+*   **Kierunek:** Informatyka
+*   **Poziom kształcenia:** magister
+*   **Specjalizacja:** _"Bezpieczeństwo systemów informatycznych"_
+
+#### **10.2015 – 02.2019:** Politechnika Poznańska 
+
+*   **Wydział:** Elektryczny
+*   **Kierunek:** Informatyka
+*   **Poziom kształcenia:** inżynier
+*   **Specjalizacja:** _"BSI - Bezpieczeństwo systemów informatycznych"_
+
+
+

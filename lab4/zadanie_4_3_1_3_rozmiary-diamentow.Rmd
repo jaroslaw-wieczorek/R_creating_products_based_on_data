@@ -1,0 +1,97 @@
+---
+title: "Rozmiary diamentów"
+author: "Jarosław Wieczorek"
+date: 2016-08-25
+output: html_document
+---
+```{r, echo=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE
+)
+
+library(ggplot2)
+library(dplyr)
+
+```
+
+
+```{r comma_setup}
+comma <- function(x) format(x, digits = , big.mark = ",")
+```
+
+```{r smaller_setup, include = FALSE}
+smaller <- diamonds %>% 
+  filter(carat <= 2.5)
+```
+
+```{r bigger_setup, include = FALSE}
+bigger <- diamonds %>% 
+  filter(carat >= 2.5)
+```
+
+Mamy dane o `r comma(nrow(diamonds))` diamentach. Tylko 
+`r comma(nrow(diamonds) - nrow(smaller))` diamentów jest większych niż 2,5 karata. 
+Poniżej przedstawiony jest rozkład pozostałych:
+
+```{r, echo = FALSE}
+smaller %>% 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01)
+```
+
+>Na załączonym wykresie możemy zaobserwować częstotliwość występowania diamentów o określonej wadze waga w karatach). Powszechnie diament jest rzadkim minerałem, zaś taki, który przekracza wagę 2-2,5 karata jest czymś naprawdę unikatowym. Większość diamentów swoją wagę oscyluje między 0.2 a 1,5 karata lub około 2 karatów.
+O obiekcie graficznym '**geo_freqpoly** ' z pomocy możemy dowiedzieć się, że zastosowany parametr '**binwidth**' określa szerokość pojemników, do których przypisywane będą wartości - czyli w tym przypadku służy on za precyzje z jaką dany diament o danej wadze przypisywany jest do danego pojemnika np. diament o wadze 0.999 będzie zaliczony do diamentów o wadze 1.0. 
+
+```{r analiza}
+diamonds %>%
+  ggplot() +
+  geom_point(mapping = aes(x = cut, y = carat, color=cut))
+
+diamonds %>%
+  ggplot() +
+  geom_point(mapping = aes(x = color, y = carat, color=color))
+
+diamonds %>%
+  ggplot() +
+  geom_point(mapping = aes(x = clarity, y = carat, color=clarity))
+```
+
+```{r dwadzieścia największych}
+diamonds %>%
+  select(carat, cut, color, clarity, price) %>%
+  as.data.frame() %>% 
+  arrange(desc(carat)) %>%
+  head(20)
+```
+
+Mamy dane o `r comma(nrow(diamonds))` diamentach. Aż 
+`r comma(nrow(diamonds) - nrow(bigger))` diamentów jest mniejszych niż 2,5 karata. 
+Poniżej przedstawiony jest rozkład pozostałych:
+
+```{r, echo = FALSE}
+bigger %>% 
+  ggplot(aes(carat)) + 
+  geom_freqpoly(binwidth = 0.01)
+```
+
+
+
+Zadanie 4:
+```{r a, cache = TRUE}
+lubridate::now()
+```
+
+```{r b, cache = TRUE, dependson = "a"}
+lubridate::now()
+```
+
+```{r c, cache = TRUE, dependson = "a"}
+lubridate::now()
+```
+
+```{r d, cache = TRUE, dependson = "c"}
+lubridate::now()
+```
+

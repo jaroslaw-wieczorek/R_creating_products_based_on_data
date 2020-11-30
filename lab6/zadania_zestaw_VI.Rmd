@@ -1,0 +1,82 @@
+---
+title: "Rozkład danych diamentów"
+output: flexdashboard::flex_dashboard
+# author: "Jarosław Wieczorek"
+---
+
+# diamonds
+```{r setup, include = FALSE}
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(DT)
+
+knitr::opts_chunk$set(fig.width = 5, fig.asp = 1/3)
+
+```
+
+## Kolumna 1
+### Karaty (zmienna carat)
+```{r}
+diamonds %>%
+  ggplot(aes(carat)) + geom_histogram(binwidth = 0.1)
+```
+
+### Szlif (zmienna cut)
+```{r}
+diamonds %>%
+  ggplot(aes(cut)) + geom_bar()
+```
+
+### Kolor (zmienna color)
+```{r}
+diamonds %>%
+  ggplot(aes(color)) +  geom_bar()
+```
+
+## Kolumna 2
+### Największe diamenty
+```{r}
+diamonds %>% 
+  arrange(desc(carat)) %>% 
+  select(carat, cut, color, price) %>% 
+  head(100) %>%
+  DT::datatable()
+```
+
+
+# iris
+```{r}
+knitr::opts_chunk$set(fig.width = 5, fig.asp = 1/2)
+```
+
+## Kolumna 1
+### Gatunki
+```{r}
+p <- ggplot(iris) + 
+       geom_point(aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+       scale_x_log10() +
+       theme(legend.title = element_blank())
+
+ggplotly(p)
+```
+   
+```{r}
+knitr::opts_chunk$set(fig.width = 5, fig.asp = 1/2)
+```
+
+## Kolumna 2
+### Szerokość płatka (1)
+```{r}
+iris %>%
+ggplot(aes(Sepal.Width, fill = Species)) + 
+  geom_histogram(binwidth = 0.2) +
+  labs(x = "Szerokość płatka", y = "częstość")
+```   
+ 
+### Szerokość płatka (2)
+```{r}
+iris %>%
+ggplot() %>% +
+  geom_point(mapping = aes(x = Sepal.Length, y = Sepal.Width, colour = Petal.Width)) 
+```

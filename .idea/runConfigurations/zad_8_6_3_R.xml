@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="zad_8_6_3.R" type="ShConfigurationType">
+    <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+    <option name="SCRIPT_PATH" value="$PROJECT_DIR$/lab8/zad_8_6_3.R" />
+    <option name="SCRIPT_OPTIONS" value="" />
+    <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+    <option name="INTERPRETER_PATH" value="/bin/R" />
+    <option name="INTERPRETER_OPTIONS" value="Rscript -e 'library(methods); shiny::runApp(&quot;./lab8/zad_8_6_3.R&quot;, host=&quot;127.0.0.1&quot;, port=8995, launch.browser = FALSE)'" />
+    <method v="2">
+      <option name="LaunchBrowser.Before.Run" browser="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" url="127.0.0.1:8995" />
+    </method>
+  </configuration>
+</component>
